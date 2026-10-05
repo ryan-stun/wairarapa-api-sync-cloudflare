@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "wairarapa-api-sync",
+  "compatibility_date": "2026-10-04",
+  "main": "./workers/app.js",
+  "assets": {
+    "directory": "./build/client",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wairarapa-api-sync-db",
+      "database_id": "10b7ab3e-b6ff-4af7-99e2-07fd7dfeba37",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "SCOPES": "read_product_listings,read_products,write_products",
+    "SHOPIFY_APP_URL": "https://wairarapa-api-sync.tight-cake-7e0b.workers.dev"
+  }
+}

@@ -1,0 +1,43 @@
+.progress-container {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.2s ease;
+}
+
+.progress-container.active {
+    opacity: 1;
+    margin-top: 1rem;
+    transform: translateY(0%);
+    transition: all 0.2s ease;
+}
+
+.progress-bar-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    transition: all 0.2s ease;
+}
+
+.progress-bar-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+    transition: all 0.2s ease;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}

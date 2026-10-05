@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "28a0636f2e26a424b1097901f65c0e2b"
+name = "Wairarapa API Sync"
+application_url = "https://wairarapa-api-sync.tight-cake-7e0b.workers.dev"
+embedded = true
+handle = "wairarapa-api-sync"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "destination-wairarapa-development.myshopify.com"
+
+[webhooks]
+api_version = "2024-04"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_product_listings,read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://wairarapa-api-sync.tight-cake-7e0b.workers.dev/auth/callback",
+  "https://wairarapa-api-sync.tight-cake-7e0b.workers.dev/auth/shopify/callback",
+  "https://wairarapa-api-sync.tight-cake-7e0b.workers.dev/api/auth/callback"
+]
+
+[pos]
+embedded = false
